@@ -103,7 +103,7 @@ app.post(
 );
 
 app.get("/", (_, res) => {
-  return res.send("E Commerce Client Side");
+  return res.send("E Commerce Server Side");
 });
 
 app.use(express.json());
