@@ -102,7 +102,7 @@ app.post(
   }
 );
 
-app.use("/", (_, res) => {
+app.get("/", (_, res) => {
   return res.send("E Commerce Client Side");
 });
 
