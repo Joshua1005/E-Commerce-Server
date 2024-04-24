@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node dist/index",
+    "build": "npx tsc",
     "dev": "concurrently \"npx tsc\" \"npx tsc --watch\" \"nodemon dist/index\""
   },
   "keywords": [],
