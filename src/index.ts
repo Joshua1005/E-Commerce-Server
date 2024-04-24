@@ -102,6 +102,10 @@ app.post(
   }
 );
 
+app.use("/", (_, res) => {
+  return res.send("E Commerce Client Side");
+});
+
 app.use(express.json());
 
 app.use("/api", router);
