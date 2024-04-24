@@ -69,8 +69,8 @@ app.post("/webhook", express.raw({ type: "application/json" }), async (req, res)
     }
     return res.send().end();
 });
-app.use("/", (_, res) => {
-    return res.send("E Commerce Client Side");
+app.get("/", (_, res) => {
+    return res.send("E Commerce Server Side");
 });
 app.use(express.json());
 app.use("/api", router);

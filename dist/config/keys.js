@@ -1,4 +1,5 @@
-process.loadEnvFile();
+import dotenv from "dotenv";
+dotenv.config();
 const keys = {
     server: {
         name: "Mern ECommerce Backend",
@@ -18,12 +19,12 @@ const keys = {
     jwt: {
         accessTokenSecret: process.env.ACCESS_TOKEN_SECRET,
         refreshTokenSecret: process.env.REFRESH_TOKEN_SECRET,
-        tokenLife: "5s",
+        tokenLife: "7d",
     },
     google: {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://localhost:3000/api/auth/google/callback",
+        callbackURL: `https://e-commerce-server-1-r3of.onrender.com/auth/google/callback`,
     },
 };
 export const { server, stripeKey, client, database, jwt, google } = keys;
