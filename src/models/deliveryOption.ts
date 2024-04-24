@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import type { InferSchemaType, Document, Model } from "mongoose";
+import type { InferSchemaType, Model } from "mongoose";
 
 interface DeliveryOptionSchema
   extends InferSchemaType<typeof deliveryOptionSchema> {}
