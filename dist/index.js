@@ -2,6 +2,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import bodyParser from "body-parser";
 // Helpers
 import { server, stripeKey } from "./config/keys.js";
 import connectDB from "./libs/connectDB.js";
@@ -18,7 +19,7 @@ import User from "./models/user.js";
 const app = express();
 connectDB();
 setupPassword(app);
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors(corsOptions));
 app.post("/webhook", express.raw({ type: "application/json" }), async (req, res) => {
@@ -72,7 +73,7 @@ app.post("/webhook", express.raw({ type: "application/json" }), async (req, res)
 app.get("/", (_, res) => {
     return res.send("E Commerce Server Side");
 });
-app.use(express.json());
+app.use(bodyParser.json());
 app.use("/api", router);
 app.listen(server.port, () => {
     console.log(`Server running on port:${server.port}`);

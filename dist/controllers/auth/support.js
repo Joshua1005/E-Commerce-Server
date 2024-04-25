@@ -3,6 +3,7 @@ const cookieOptions = {
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: "strict",
     secure: true,
-    domain: "https://e-commerce-server-1-r3of.onrender.com",
+    partitioned: true,
+    priority: "high",
 };
 export { cookieOptions };
