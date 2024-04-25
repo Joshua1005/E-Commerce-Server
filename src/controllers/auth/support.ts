@@ -8,6 +8,7 @@ const cookieOptions: CookieOptions = {
   secure: true,
   partitioned: true,
   priority: "high",
+  domain: "onrender.com",
 };
 
 export { cookieOptions };
